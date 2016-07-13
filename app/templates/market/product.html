@@ -1,0 +1,15 @@
+{% for prd in product %}
+<div class="tab_pane info it{{ prd.id }} tactive">
+	<div class="big-image">
+		<img src="{{ prd.img |thumbnail('370x370') }}" alt="{{ product.name }}">
+	</div>
+	<p>Название: {{ prd.name }}</p>
+	<p>Цена: {{ prd.price }}{% trans %}rub.{% endtrans %}</p>
+</div>
+<div class="tab_pane more mt{{ prd.id }}">
+	<p>{{ prd.memo }}</p>
+</div>
+<div class="tab_pane comments ct{{ prd.id }}">
+	<p>Тут комменты</p>
+</div>
+{% endfor %}

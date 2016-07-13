@@ -1,0 +1,1 @@
+celery -A app.celery_orders worker

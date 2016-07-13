@@ -1,0 +1,25 @@
+<div class="cart_table">
+	<table cellspacing="0" cellpadding="3">
+		<thead>
+			<tr>
+				<td>Название</td>
+				<td>Количество</td>
+				<td>Сумма</td>
+				<td>Управление</td>
+			</tr>
+		</thead>
+		<tbody>
+			{% for i in products %}
+				<tr>
+					<td>{{ get_name(i)|truncate(25) }}</td>
+					<td>{{ products[i] }}</td>
+					<td>{{ get_sum(i,products[i]) }} {% trans %}rub.{% endtrans %}</td>
+					<td class="cntrl">
+						<button class="pmbuttons" d-id="{{i}}" d-type="add">+</button>
+						<button class="pmbuttons" d-id="{{i}}" d-type="remove">-</button>
+					</td>
+				</tr>
+			{% endfor %}
+		</tbody>
+	</table>
+</div>

@@ -1,0 +1,88 @@
+<!doctype html>
+<html lang="ru">
+	<head>
+		<meta charset="UTF-8" />
+		<title>Aviator</title>
+		<link rel="stylesheet" href="{{ url_for('static', filename='market/css/main.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='market/css/window.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='market/css/select2/select2.css') }}">
+		<link rel="stylesheet" href="{{ url_for('static', filename='market/css/select2/select2-bootstrap.css') }}">
+		<script type="text/javascript" src="{{ url_for('static', filename='market/js/jquery.min.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='market/js/resizable.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='market/js/main.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='market/js/css.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='market/js/select2/select2.js') }}"></script>
+		<script type="text/javascript" src="{{ url_for('static', filename='market/js/select2/select2_locale_ru.js') }}"></script>
+	</head>
+	<body>
+	<div id="header_div">
+		<div id="header">
+			<div id="menu_but"></div>
+			<div id="shortcuts"></div>
+			<div id="tray">
+				<span class="tray cart"><img src="static/market/icons/cart.png" alt="" width="14px"></span>
+			</div>
+			<div id="date_n_time">
+				<p id="clock"></p>
+				<p id="date"></p>
+			</div>
+		</div>
+		<div id="header_bg_blur">
+			<div class="blurred_bg_color"></div>
+		</div>
+		<div id="header_hide" title="Свернуть все окна"></div>
+	</div>
+		<div id="menu">
+			<div class="main_block">
+				<div id="left_mn_blc">
+					<ul id="short_cats">
+					{% for category in categories_sh %}
+						<li d-cat="{{ category.id }}"><span class="icon"><img src="static/market/icons/{{ category.icon}}"></span>{{ category.name }}</li>
+					{% endfor %}
+					</ul>
+					<ul id="all_cats">
+					{% for category in categories_all %}
+						<li d-cat="{{ category.id }}"><span class="icon"><img src="static/market/icons/{{ category.icon}}" height="16px"></span>{{ category.name }}</li>
+					{% endfor %}
+					</ul>
+					<div id="splitter"></div>
+					<div id="all_sh"><span class="r_arrow"></span><t>Все категории</t><t style="display:none;">Назад</t></div>
+					<div id="search_div">
+						<input type="text" placeholder=" Найти программы и файлы">
+					</div>
+				</div>
+				<div id="right_mn_blc">
+					<div id="div_icon">
+						<div class="big_icon">
+							<img src="static/market/icons/top_avatar.png" alt="">
+						</div>
+					</div>
+					<ul class="rshort">
+						<li d-icon="top_avatar.png"><span>Home</span></li>
+						<li d-icon="top_document.png"><span>Документы</span></li>
+						<li class="splitter"></li>
+						<li d-icon="top_avatar.png"><span>Компьютер</span></li>
+						<li d-icon="top_document.png"><span>Сеть</span></li>
+						<li class="splitter"></li>
+						<li d-icon="top_avatar.png"><span>Панель управления</span></li>
+						<li d-icon="top_document.png"><span>Устройства и принтеры</span></li>
+						<li d-icon="top_avatar.png"><span>Справка и поддержка</span></li>
+						<li d-icon="top_document.png"><span>Выполнить...</span></li>
+					</ul>
+					<div id="start_order">
+						<span id="start" onclick="open_cart_window();menu();">Оформление заказа</span>
+						<span id="more">&#9658;</span>
+					</div>
+				</div>
+			</div>
+			<div class="blurred">
+				<div id="darkned_cont"></div>
+				<div id="blurred_cont"></div>
+				<div id="blurred_bg">
+					<div class="blurred_bg_color"></div>
+				</div>
+			</div>
+		</div>
+		<div class="container"></div>
+	</body>
+</html>

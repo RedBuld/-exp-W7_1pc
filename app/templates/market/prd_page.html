@@ -1,0 +1,10 @@
+<ul class="prd-line">
+	{% for product in products %}
+		<li d-id="{{ product.id }}" d-name="{{ product.name }}">
+			<div class="prd-img-div">
+				<img src="{{ product.img|thumbnail('140x140') }}" alt="{{ product.name }}">
+			</div>
+			<p>{{ product.name }}</p>
+		</li>
+	{% endfor %}
+</ul>

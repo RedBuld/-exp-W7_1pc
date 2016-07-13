@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="ru" class="no-js">
+  <head>
+    <meta charset="UTF-8" />
+    <title>MIGOM</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='market/css/style.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='market/css/slider.css') }}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='market/css/main.css') }}">
+    <script type="text/javascript" src="{{ url_for('static', filename='market/js/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='market/js/modernizr.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='market/js/slider.js') }}"></script>
+    <script type="text/javascript" src="{{ url_for('static', filename='market/js/bg.js') }}"></script>
+  </head>
+  <body>
+    <div id="header" >
+      <div id="logo"></div>
+      <div id="cart"></div>
+    </div>
+    <div id="cart_div">
+      <div id="cart_head">
+      </div>
+      <div id="cart_body">
+        <ul></ul>
+      </div>
+      <div id="cart_bottom">
+        <button class="viol_but" onclick="create_order()">ОФОРМИТЬ <b></b></button>
+      </div>
+    </div>
+    <div class="wrap"></div>
+    <div class="container">
+      {{ order_key }}
+    </div>
+    <div id="footer">MIGOM.PRO &copy; 2014</div>
+  </body>
+</html>
