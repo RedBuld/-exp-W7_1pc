@@ -1,1 +1,1 @@
-use instruction and requirements from <a href="https://github.com/RedBuld/Aviator">Aviator</a> project
+use instruction and requirements for <a href="https://github.com/RedBuld/Aviator">Aviator</a> project
